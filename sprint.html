@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #form{
+            display: flex;
+            flex-direction: column;
+            width: 60%;
+        }
+        #lhs{
+            float: left;
+            width: 25%;
+        }
+        input{
+            margin: 10%;
+            height: 35px;
+        }
+        button{
+            width: 60%;
+            margin: 10%;
+            height: 35px;
+        }
+        #grid > div{
+            height: 200px;
+            width: 200px;
+            border: 1px solid black;
+            margin-left: 25%;
+            margin-bottom: 10%;
+            margin-top: 5%;
+        }
+        #grid{
+            display: grid;
+            grid-template: 
+            "a b"
+            "c d";
+        }
+        #item1{
+            grid-area: a;
+        }
+        #item2{
+            grid-area: b;
+        }
+        #item3{
+            grid-area: c;
+        }
+        #item4{
+            grid-area: d;
+        }
+        #remove{
+            width: 60px;
+            margin-top: 70%;
+        }
+        #update{
+            width: 60px;
+            margin-top: 70%;
+        }
+    </style>
+</head>
+<body>
+<div id="lhs">
+    <form id="form">
+        <input type="text" id="name" placeholder="Name">
+        <input type="number" id="price" placeholder="Price">
+        <input type="text" id="description" placeholder="Description">
+        <input type="text" id="delivery" placeholder="Estimated Delivery">
+        <input type="url" id="image" placeholder="Image URL(optional)">
+        <button onclick="add()">Add Product</button>
+    </form>
+</div>
+<div id="grid">
+    <div id="item1">
+        <button id="remove" style="float: left;" onclick="res1()">remove</button>
+        <button id="update" onclick="update1()">update</button>
+    </div>
+    <div id="item2">
+        <button id="remove" style="float: left;" onclick="res2()">remove</button>
+        <button id="update" onclick="update2()">update</button>
+    </div>
+    <div id="item3">
+        <button id="remove" style="float: left;" onclick="res3()">remove</button>
+        <button id="update" onclick="update3()">update</button>
+    </div>
+    <div id="item4">
+        <button id="remove" style="float: left;" onclick="res4()">remove</button>
+        <button id="update" onclick="update4()">update</button>
+    </div>
+</div>
+</body>
+</html>
+<script>
+    var name = document.getElementById("name")
+    var price = document.getElementById("price")
+    var des = document.getElementById("description")
+    var delivery = document.getElementById("delivery")
+    var Image = document.getElementById("image")
+    var addProduct = document.getElementById("add")
+    var body = document.querySelector('body')
+    var grid = document.getElementById("grid")
+    var item = document.getElementById("item1")
+    var obj = []
+    function add(){
+        obj.push({
+            name: document.getElementById("name").value,
+            price: document.getElementById('price').value,
+            description: document.getElementById('description').value,
+            delivery:document.getElementById('delivery').value,
+            Image:document.getElementById('image').value,
+        })
+        console.log(obj)
+    }
+    console.log(obj)
+    function res1(){
+       item1.remove()
+    }
+    function res2(){
+       item2.remove()
+    }
+    function res3(){
+       item3.remove()
+    }
+    function res4(){
+       item4.remove()
+    }
+    function update1(){
+        var new_price = prompt(`Enter new price`)
+        new_price = document.getElementById("update").value
+        obj.push({
+            name: document.getElementById("name").value,
+            price : new_price,
+            description: document.getElementById('description').value,
+            delivery:document.getElementById('delivery').value,
+            Image:document.getElementById('image').value,
+        })
+        console.log(obj)
+    }
+    function update2(){
+        var new_price = prompt(`Enter new price`)
+        new_price = document.getElementById("update").value
+        obj.push({
+            name: document.getElementById("name").value,
+            price : new_price,
+            description: document.getElementById('description').value,
+            delivery:document.getElementById('delivery').value,
+            Image:document.getElementById('image').value,
+        })
+        console.log(obj)
+    }
+    function update3(){
+        var new_price = prompt(`Enter new price`)
+        new_price = document.getElementById("update").value
+        obj.push({
+            name: document.getElementById("name").value,
+            price : new_price,
+            description: document.getElementById('description').value,
+            delivery:document.getElementById('delivery').value,
+            Image:document.getElementById('image').value,
+        })
+        console.log(obj)
+    }
+    function update4(){
+        var new_price = prompt(`Enter new price`)
+        new_price = document.getElementById("update").value
+        obj.push({
+            name: document.getElementById("name").value,
+            price : new_price,
+            description: document.getElementById('description').value,
+            delivery:document.getElementById('delivery').value,
+            Image:document.getElementById('image').value,
+        })
+        console.log(obj)
+    }
+</script>
